@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>谷尧生态农业科技有限公司</title>
+    <meta
+      name="description"
+      content="谷尧生态农业科技有限公司，立足中山市五桂山街道桂南旗溪村，聚焦生态餐厅、姜黄系列产品、生态体验馆与民宿，打造融合农业、健康与自然生活方式的现代企业品牌。"
+    />
+    <style>
+      :root {
+        --bg: #0b0f0d;
+        --bg-soft: #111714;
+        --card: rgba(255, 255, 255, 0.04);
+        --line: rgba(255, 255, 255, 0.1);
+        --text: #f5f7f5;
+        --muted: rgba(245, 247, 245, 0.72);
+        --subtle: rgba(245, 247, 245, 0.46);
+        --green: #9ed8b2;
+        --gold: #d5c07a;
+        --max: 1200px;
+        --radius: 26px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(112, 177, 133, 0.18), transparent 30%),
+          radial-gradient(circle at bottom right, rgba(213, 192, 122, 0.14), transparent 28%),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(18px);
+        background: rgba(11, 15, 13, 0.68);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 76px;
+        gap: 20px;
+      }
+
+      .brand small {
+        display: block;
+        font-size: 12px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: rgba(158, 216, 178, 0.88);
+        margin-bottom: 8px;
+      }
+
+      .brand strong {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 28px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .nav a:hover {
+        color: var(--text);
+      }
+
+      .hero {
+        padding: 84px 0 72px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--muted);
+        border-radius: 999px;
+        padding: 10px 16px;
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 20px 0 0;
+        font-size: clamp(40px, 6vw, 72px);
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+        font-weight: 600;
+      }
+
+      .lead {
+        margin-top: 26px;
+        max-width: 820px;
+        font-size: 18px;
+        color: var(--muted);
+      }
+
+      .hero-actions {
+        margin-top: 36px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 24px;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+      }
+
+      .btn-primary {
+        background: #ffffff;
+        color: #111;
+      }
+
+      .btn-secondary {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .hero-side {
+        display: grid;
+        gap: 18px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 28px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+      }
+
+      .card-kicker {
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--subtle);
+      }
+
+      .card h3 {
+        margin: 14px 0 0;
+        font-size: 28px;
+        line-height: 1.25;
+      }
+
+      .card p {
+        margin: 16px 0 0;
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .highlight {
+        background: linear-gradient(180deg, rgba(158, 216, 178, 0.16), rgba(158, 216, 178, 0.08));
+        border-color: rgba(158, 216, 178, 0.22);
+      }
+
+      .section {
+        padding: 96px 0;
+      }
+
+      .section-line {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 24px;
+        align-items: start;
+        margin-bottom: 40px;
+      }
+
+      .section-head small {
+        display: block;
+        font-size: 12px;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: rgba(158, 216, 178, 0.84);
+        margin-bottom: 16px;
+      }
+
+      .section-head h2 {
+        margin: 0;
+        font-size: clamp(32px, 4vw, 52px);
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+      }
+
+      .section-head p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        display: grid;
+        gap: 20px;
+      }
+
+      .grid-2 { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+      .business-card h3,
+      .value-card h3,
+      .mini-card h3 {
+        margin: 16px 0 0;
+        font-size: 26px;
+      }
+
+      .business-card .en {
+        color: var(--subtle);
+        font-size: 12px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .business-card p,
+      .value-card p,
+      .mini-card p,
+      .vision-item p {
+        color: var(--muted);
+        font-size: 15px;
+        margin-top: 16px;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .tag {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .vision-list {
+        display: grid;
+        gap: 16px;
+      }
+
+      .vision-item {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 22px;
+      }
+
+      .vision-num {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(158, 216, 178, 0.14);
+        color: var(--green);
+        font-size: 14px;
+        font-weight: 700;
+        flex: 0 0 auto;
+        margin-top: 2px;
+      }
+
+      .culture-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      .culture-chip {
+        padding: 12px 16px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+        font-size: 14px;
+      }
+
+      .contact-panel {
+        display: grid;
+        grid-template-columns: 1fr 0.82fr;
+        gap: 24px;
+        border: 1px solid var(--line);
+        border-radius: 32px;
+        background: rgba(255, 255, 255, 0.04);
+        padding: 34px;
+      }
+
+      .contact-box {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 24px;
+        background: rgba(7, 10, 8, 0.4);
+        padding: 24px;
+      }
+
+      .contact-item + .contact-item {
+        margin-top: 18px;
+      }
+
+      .contact-item span {
+        display: block;
+        color: var(--subtle);
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .contact-item strong,
+      .contact-item div {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .footer {
+        padding: 28px 0 50px;
+        color: var(--subtle);
+        font-size: 13px;
+      }
+
+      .footer-line {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .image-placeholder {
+        min-height: 280px;
+        border-radius: 28px;
+        border: 1px dashed rgba(255, 255, 255, 0.16);
+        background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--subtle);
+        padding: 24px;
+      }
+
+      .mobile-menu-tip {
+        display: none;
+        color: var(--subtle);
+        font-size: 13px;
+      }
+
+      @media (max-width: 1024px) {
+        .hero-grid,
+        .section-head,
+        .contact-panel,
+        .grid-4,
+        .grid-3,
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 60px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          width: min(var(--max), calc(100% - 28px));
+        }
+
+        .topbar-inner {
+          min-height: 70px;
+          align-items: flex-start;
+          flex-direction: column;
+          justify-content: center;
+          padding: 12px 0;
+        }
+
+        .nav {
+          gap: 14px 18px;
+          font-size: 13px;
+        }
+
+        .brand strong {
+          font-size: 18px;
+        }
+
+        .lead {
+          font-size: 16px;
+        }
+
+        .card,
+        .contact-panel {
+          padding: 22px;
+        }
+
+        .mobile-menu-tip {
+          display: block;
+          margin-top: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">
+          <small>GUYAO ECO AGRICULTURE</small>
+          <strong>谷尧生态农业科技有限公司</strong>
+          <div class="mobile-menu-tip">中山市五桂山街道桂南旗溪村</div>
+        </div>
+        <nav class="nav">
+          <a href="#about">关于谷尧</a>
+          <a href="#business">业务板块</a>
+          <a href="#vision">未来方向</a>
+          <a href="#culture">企业文化</a>
+          <a href="#contact">联系我们</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">中国 · 中山市五桂山街道桂南旗溪村</div>
+            <h1>
+              以生态为根基，<br />
+              打造面向未来的农业、健康与自然生活方式品牌。
+            </h1>
+            <p class="lead">
+              谷尧生态农业科技有限公司立足生态环境受到保护的旗溪村，以高标准、长期主义与品牌化经营为核心原则，围绕生态餐厅、姜黄系列产品、生态体验馆与民宿三大板块，构建兼具品质感、创新力与可持续价值的现代企业体系。
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#business">查看业务板块</a>
+              <a class="btn btn-secondary" href="#contact">商务联系</a>
+            </div>
+          </div>
+
+          <div class="hero-side">
+            <div class="card">
+              <div class="card-kicker">企业定位</div>
+              <h3>生态农业 × 健康产品 × 文旅体验</h3>
+              <p>
+                以在地生态资源为基础，以品牌运营为核心，以空间体验和产品价值为外部表达，构建具备长期竞争力的综合型生态企业。
+              </p>
+            </div>
+            <div class="card highlight">
+              <div class="card-kicker">发展关键词</div>
+              <h3>生态保护 / 品牌升级 / 产业融合</h3>
+              <p>
+                通过高品质内容建设、产品创新和场景化体验升级，塑造可持续传播、可持续消费、可持续增长的企业品牌。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="image-placeholder">
+            建议在此替换为公司实景大图：旗溪村自然环境 / 园区航拍 / 餐厅空间 / 生态基地主视觉
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <small>About Guyao</small>
+              <h2>公司理念与价值主张</h2>
+            </div>
+            <p>
+              我们尊重自然生态的边界，也相信企业成长应当与环境保护、品质经营和社会价值并行。谷尧坚持以生态为本、品质为先、创新驱动、长期主义为核心方向，不做短期化经营，不做表面式表达，而是以稳健和专业构筑品牌基础。
+            </p>
+          </div>
+
+          <div class="grid-4">
+            <article class="card value-card">
+              <div class="card-kicker">01</div>
+              <h3>生态为本</h3>
+              <p>立足五桂山与旗溪村的生态资源条件，坚持尊重环境、保护环境、融入环境的发展路径。</p>
+            </article>
+            <article class="card value-card">
+              <div class="card-kicker">02</div>
+              <h3>品质为先</h3>
+              <p>从食材、产品、服务到空间体验，以高标准建立品牌信任，以细节塑造长期口碑。</p>
+            </article>
+            <article class="card value-card">
+              <div class="card-kicker">03</div>
+              <h3>创新驱动</h3>
+              <p>持续推动农业、健康消费与文旅体验的融合，让企业发展拥有更强的市场适应力与未来想象力。</p>
+            </article>
+            <article class="card value-card">
+              <div class="card-kicker">04</div>
+              <h3>长期主义</h3>
+              <p>聚焦长期价值沉淀，以稳健运营和品牌建设实现可持续增长，而非短期流量堆积。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="business" class="section section-line">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <small>Business Segments</small>
+              <h2>三大业务板块</h2>
+            </div>
+            <p>
+              围绕生态资源和健康生活方式，形成餐饮、产品与空间体验相互赋能的业务体系，实现从品牌认知、消费体验到复购传播的完整闭环。
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card business-card">
+              <div class="en">Farm-to-Table Dining</div>
+              <h3>生态餐厅</h3>
+              <p>
+                以自然食材、健康饮食和在地文化为核心，打造兼具品质、审美与生活方式表达的餐饮体验空间。
+              </p>
+              <div class="tags">
+                <span class="tag">精选食材</span>
+                <span class="tag">自然健康</span>
+                <span class="tag">品质服务</span>
+              </div>
+            </article>
+
+            <article class="card business-card">
+              <div class="en">Turmeric Product Line</div>
+              <h3>姜黄系列产品</h3>
+              <p>
+                以姜黄为核心延展健康食养方向，逐步建立标准化、品牌化、可传播的产品矩阵，形成市场辨识度与价值竞争力。
+              </p>
+              <div class="tags">
+                <span class="tag">品牌化开发</span>
+                <span class="tag">健康导向</span>
+                <span class="tag">持续创新</span>
+              </div>
+            </article>
+
+            <article class="card business-card">
+              <div class="en">Eco Experience & Homestay</div>
+              <h3>生态体验馆 + 民宿</h3>
+              <p>
+                将生态农业、自然教育、乡村体验与舒适住宿有机结合，呈现可体验、可感知、可停留的生态生活空间。
+              </p>
+              <div class="tags">
+                <span class="tag">生态体验</span>
+                <span class="tag">乡村美学</span>
+                <span class="tag">沉浸空间</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="vision" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <small>Future Vision</small>
+              <h2>未来发展方向与创新路径</h2>
+            </div>
+            <p>
+              谷尧将坚持以创新驱动产业升级，在生态农业、健康消费、乡村文旅与品牌传播之间建立更加稳固的协同关系，形成既有社会价值，也有商业价值的长期发展体系。
+            </p>
+          </div>
+
+          <div class="vision-list">
+            <div class="vision-item">
+              <div class="vision-num">01</div>
+              <p>打造中山地区具有辨识度的生态农业品牌，实现餐厅、产品与文旅体验协同发展的综合型模式。</p>
+            </div>
+            <div class="vision-item">
+              <div class="vision-num">02</div>
+              <p>持续完善姜黄系列与相关健康产品矩阵，增强产品力、品牌力与市场影响力。</p>
+            </div>
+            <div class="vision-item">
+              <div class="vision-num">03</div>
+              <p>推动生态体验馆与民宿内容升级，形成更强的目的地属性、传播属性与复购能力。</p>
+            </div>
+            <div class="vision-item">
+              <div class="vision-num">04</div>
+              <p>建设兼具生态价值、社会价值与商业价值的企业体系，探索更可持续的乡村产业发展路径。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="culture" class="section section-line">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <small>Corporate Culture</small>
+              <h2>企业文化与自我要求</h2>
+            </div>
+            <p>
+              真正优秀的企业，不仅在于产品和业绩，更在于价值观、执行标准与团队精神。谷尧以真诚、责任、专业与进取作为企业长期坚守的文化底色。
+            </p>
+          </div>
+
+          <div class="culture-wrap">
+            <div class="culture-chip">真诚务实</div>
+            <div class="culture-chip">尊重自然</div>
+            <div class="culture-chip">追求卓越</div>
+            <div class="culture-chip">协同共创</div>
+            <div class="culture-chip">责任担当</div>
+            <div class="culture-chip">开放进取</div>
+          </div>
+
+          <div class="grid-3">
+            <article class="card mini-card">
+              <div class="card-kicker">Quality</div>
+              <h3>对品质的要求</h3>
+              <p>坚持高标准管理，从源头到最终呈现，确保每一项产品与服务都体现企业的专业水准与品牌温度。</p>
+            </article>
+            <article class="card mini-card">
+              <div class="card-kicker">Team</div>
+              <h3>对团队的要求</h3>
+              <p>倡导责任感、协作力与执行力，鼓励持续学习与主动成长，在实践中不断优化和突破。</p>
+            </article>
+            <article class="card mini-card">
+              <div class="card-kicker">Future</div>
+              <h3>对未来的要求</h3>
+              <p>以更高视野规划企业发展路径，在行业竞争中坚持差异化定位，持续提升品牌影响力与社会价值。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="contact-panel">
+            <div>
+              <small class="card-kicker" style="display:block; margin-bottom: 16px; color: rgba(158,216,178,0.84);">Contact</small>
+              <h2 style="margin:0; font-size: clamp(32px, 4vw, 52px); line-height: 1.12;">欢迎与我们建立联系</h2>
+              <p class="lead" style="margin-top:20px; font-size:16px; max-width: 760px;">
+                谷尧生态农业科技有限公司致力于成为生态农业与品质生活方式领域的长期建设者。欢迎合作伙伴、消费者与关注生态未来的各界人士，与我们共同探索更高品质、更可持续的发展可能。
+              </p>
+            </div>
+
+            <div class="contact-box">
+              <div class="contact-item">
+                <span>公司名称</span>
+                <strong>谷尧生态农业科技有限公司</strong>
+              </div>
+              <div class="contact-item">
+                <span>地址</span>
+                <div>中国中山市五桂山街道桂南旗溪村</div>
+              </div>
+              <div class="contact-item">
+                <span>联系电话</span>
+                <div>请补充公司联系电话</div>
+              </div>
+              <div class="contact-item">
+                <span>商务合作 / 企业邮箱</span>
+                <div>请补充企业邮箱、微信或公众号</div>
+              </div>
+              <div class="contact-item">
+                <span>备案信息</span>
+                <div>网站上线后可在此放置 ICP 备案号与公安备案信息</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-line">
+        <div>© 2026 谷尧生态农业科技有限公司 版权所有</div>
+        <div>建议上线时补充：粤ICP备XXXXXXX号 · 粤公网安备XXXXXXXX号</div>
+      </div>
+    </footer>
+  </body>
+</html>
